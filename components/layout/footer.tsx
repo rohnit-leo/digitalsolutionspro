@@ -212,6 +212,18 @@ export default function Footer() {
               </Button>
             </div>
           </div>
+          {/* Developed by NextureX */}
+          <div className="text-center mt-4 text-gray-400 text-sm">
+            Developed by{" "}
+            <Link
+              href="https://nexturex.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-300"
+            >
+              NextureX
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
