@@ -4,7 +4,7 @@ import { Shield, Eye, Lock, UserCheck, Database, Globe } from "lucide-react"
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gray-900 pt-32">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-16">

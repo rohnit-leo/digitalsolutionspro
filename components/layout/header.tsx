@@ -39,7 +39,7 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300 hidden sm:block">
+            <span className="text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
               Digital Solutions Pro
             </span>
           </Link>

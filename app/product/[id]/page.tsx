@@ -64,7 +64,7 @@ Visit Digital Solutions Pro for more premium digital products.`
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 pt-20">
+    <div className="min-h-screen bg-slate-900 pt-32">
       <div className="container mx-auto px-4 py-8">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-slate-400 mb-8 animate-fade-in-up">

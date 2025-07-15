@@ -34,7 +34,7 @@ export default function ShopPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 pt-20">
+    <div className="min-h-screen bg-slate-900 pt-32">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
