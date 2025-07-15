@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, ShoppingBag, MessageCircle } from "lucide-react"
+import { Menu, MessageCircle } from "lucide-react"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -25,13 +26,20 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-red-500/20">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-glow">
-              <ShoppingBag className="w-5 h-5 text-white" />
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+              <Image
+                src="/images/logo.png"
+                alt="Digital Solutions Pro"
+                width={48}
+                height={48}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
-            <span className="text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
+            <span className="text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300 hidden sm:block">
               Digital Solutions Pro
             </span>
           </Link>
@@ -80,6 +88,20 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-slate-900 border-red-500/20">
               <div className="flex flex-col space-y-6 mt-8">
+                {/* Mobile Logo */}
+                <div className="flex items-center space-x-3 pb-6 border-b border-red-500/20">
+                  <div className="relative w-10 h-10">
+                    <Image
+                      src="/images/logo.png"
+                      alt="Digital Solutions Pro"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <span className="text-lg font-bold text-white">Digital Solutions Pro</span>
+                </div>
+
                 {navigation.map((item) => (
                   <Link
                     key={item.name}

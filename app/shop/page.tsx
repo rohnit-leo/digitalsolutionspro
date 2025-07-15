@@ -121,9 +121,10 @@ export default function ShopPage() {
                     alt={product.name}
                     width={400}
                     height={300}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-64 object-contain bg-white p-4 group-hover:scale-110 transition-transform duration-500"
+                    priority
                   />
-                  <Badge className={`absolute top-4 left-4 ${product.badgeColor} text-white animate-pulse`}>
+                  <Badge className={`absolute top-4 left-4 ${product.badgeColor} text-white animate-pulse shadow-lg`}>
                     {product.badge}
                   </Badge>
                   <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-sm rounded-full px-2 py-1">

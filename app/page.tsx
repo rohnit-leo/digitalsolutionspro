@@ -139,9 +139,10 @@ export default function HomePage() {
                       alt={product.name}
                       width={400}
                       height={300}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500 image-hover"
+                      className="w-full h-64 object-contain bg-white p-4 group-hover:scale-110 transition-transform duration-500"
+                      priority
                     />
-                    <Badge className={`absolute top-4 left-4 ${product.badgeColor} text-white animate-pulse`}>
+                    <Badge className={`absolute top-4 left-4 ${product.badgeColor} text-white animate-pulse shadow-lg`}>
                       {product.badge}
                     </Badge>
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

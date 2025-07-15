@@ -45,7 +45,7 @@ const team = [
     role: "Product Curation & Support",
     description:
       "Our dedicated team works around the clock to source, test, and support the best digital products for your business needs.",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/logo.png",
   },
 ]
 
@@ -56,6 +56,17 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="flex justify-center mb-8">
+              <div className="relative w-24 h-24">
+                <Image
+                  src="/images/logo.png"
+                  alt="Digital Solutions Pro"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
             <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 mb-6">
               About Digital Solutions Pro
             </Badge>
@@ -155,13 +166,15 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg blur-xl"></div>
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Digital Solutions"
-                  width={500}
-                  height={400}
-                  className="relative rounded-lg"
-                />
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-lg p-8 flex items-center justify-center">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Digital Solutions Pro"
+                    width={200}
+                    height={200}
+                    className="w-48 h-48 object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -219,7 +232,7 @@ export default function AboutPage() {
                       alt={member.name}
                       width={128}
                       height={128}
-                      className="rounded-full"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <CardTitle className="text-white text-2xl">{member.name}</CardTitle>

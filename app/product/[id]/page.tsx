@@ -68,11 +68,11 @@ Visit Digital Solutions Pro for more premium digital products.`
       <div className="container mx-auto px-4 py-8">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-slate-400 mb-8 animate-fade-in-up">
-          <Link href="/" className="hover:text-red-400 transition-colors">
+          <Link href="/" className="hover:text-green-400 transition-colors">
             Home
           </Link>
           <span>/</span>
-          <Link href="/shop" className="hover:text-red-400 transition-colors">
+          <Link href="/shop" className="hover:text-green-400 transition-colors">
             Shop
           </Link>
           <span>/</span>
@@ -93,18 +93,19 @@ Visit Digital Solutions Pro for more premium digital products.`
         <div className="grid lg:grid-cols-2 gap-12 animate-fade-in-up">
           {/* Product Image */}
           <div className="space-y-4">
-            <div className="relative overflow-hidden rounded-lg bg-slate-800 border border-red-500/20">
+            <div className="relative overflow-hidden rounded-lg bg-slate-800 border border-green-500/20 shadow-2xl">
               <Image
                 src={product.image || "/placeholder.svg"}
                 alt={product.name}
                 width={800}
                 height={600}
-                className="w-full h-96 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-[500px] object-contain bg-white p-4 hover:scale-105 transition-transform duration-500"
+                priority
               />
-              <Badge className={`absolute top-4 left-4 ${product.badgeColor} text-white animate-pulse`}>
+              <Badge className={`absolute top-4 left-4 ${product.badgeColor} text-white animate-pulse shadow-lg`}>
                 {product.badge}
               </Badge>
-              <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-green-900/10 to-transparent"></div>
             </div>
           </div>
 
@@ -112,11 +113,13 @@ Visit Digital Solutions Pro for more premium digital products.`
           <div className="space-y-6">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Badge variant="secondary" className="bg-red-500/20 text-red-400 border-red-500/30">
+                <Badge variant="secondary" className="bg-green-500/20 text-green-400 border-green-500/30">
                   {product.category}
                 </Badge>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 text-gradient-red">{product.name}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
+                {product.name}
+              </h1>
               <p className="text-lg text-slate-300 leading-relaxed">{product.description}</p>
             </div>
 
@@ -124,7 +127,7 @@ Visit Digital Solutions Pro for more premium digital products.`
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-red-400 text-red-400" />
+                  <Star key={i} className="w-5 h-5 fill-green-400 text-green-400" />
                 ))}
               </div>
               <span className="text-white font-semibold">4.9</span>
@@ -135,7 +138,7 @@ Visit Digital Solutions Pro for more premium digital products.`
             <div className="flex items-center gap-4">
               <span className="text-4xl font-bold text-white">{product.price}</span>
               <span className="text-2xl text-slate-500 line-through">{product.originalPrice}</span>
-              <Badge className="bg-red-500/20 text-red-400 border-red-500/30 animate-pulse">
+              <Badge className="bg-green-500/20 text-green-400 border-green-500/30 animate-pulse shadow-lg">
                 Save{" "}
                 {Math.round(
                   ((Number.parseInt(product.originalPrice.slice(1)) - Number.parseInt(product.price.slice(1))) /
@@ -148,17 +151,17 @@ Visit Digital Solutions Pro for more premium digital products.`
 
             {/* Duration */}
             <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-red-400" />
-              <span className="text-lg font-semibold text-red-400">{product.duration}</span>
+              <Clock className="w-5 h-5 text-green-400" />
+              <span className="text-lg font-semibold text-green-400">{product.duration}</span>
             </div>
 
             {/* Features */}
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-white">What's Included:</h3>
+              <h3 className="text-lg font-semibold text-green-400">What's Included:</h3>
               <div className="space-y-2">
                 {product.features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-red-400" />
+                    <CheckCircle className="w-5 h-5 text-green-400" />
                     <span className="text-slate-300">{feature}</span>
                   </div>
                 ))}
@@ -169,7 +172,7 @@ Visit Digital Solutions Pro for more premium digital products.`
             <div className="space-y-4">
               <Button
                 size="lg"
-                className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white text-lg py-6 btn-glow-red animate-pulse-red"
+                className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 onClick={handleBuyNow}
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
@@ -195,21 +198,21 @@ Visit Digital Solutions Pro for more premium digital products.`
             </div>
 
             {/* Trust Badges */}
-            <div className="grid grid-cols-4 gap-4 pt-6 border-t border-red-500/20">
+            <div className="grid grid-cols-4 gap-4 pt-6 border-t border-green-500/20">
               <div className="text-center group">
-                <Shield className="w-8 h-8 text-red-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                <Shield className="w-8 h-8 text-green-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="text-xs text-slate-300">100% Digital Delivery</div>
               </div>
               <div className="text-center group">
-                <Download className="w-8 h-8 text-red-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                <Download className="w-8 h-8 text-green-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="text-xs text-slate-300">Secure Files</div>
               </div>
               <div className="text-center group">
-                <Award className="w-8 h-8 text-red-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                <Award className="w-8 h-8 text-green-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="text-xs text-slate-300">After-Sale Support</div>
               </div>
               <div className="text-center group">
-                <Users className="w-8 h-8 text-red-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                <Users className="w-8 h-8 text-green-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                 <div className="text-xs text-slate-300">24/7 WhatsApp</div>
               </div>
             </div>
@@ -219,32 +222,32 @@ Visit Digital Solutions Pro for more premium digital products.`
         {/* Product Details Tabs */}
         <div className="mt-16 animate-fade-in-up">
           <Tabs defaultValue="description" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 bg-slate-800 border-red-500/20">
+            <TabsList className="grid w-full grid-cols-4 bg-slate-800 border-green-500/20">
               <TabsTrigger
                 value="description"
-                className="data-[state=active]:bg-red-600 data-[state=active]:text-white"
+                className="data-[state=active]:bg-green-600 data-[state=active]:text-white"
               >
                 Description
               </TabsTrigger>
               <TabsTrigger
                 value="specifications"
-                className="data-[state=active]:bg-red-600 data-[state=active]:text-white"
+                className="data-[state=active]:bg-green-600 data-[state=active]:text-white"
               >
                 Specifications
               </TabsTrigger>
-              <TabsTrigger value="benefits" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">
+              <TabsTrigger value="benefits" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
                 Benefits
               </TabsTrigger>
-              <TabsTrigger value="faqs" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">
+              <TabsTrigger value="faqs" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
                 FAQs
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="description" className="mt-8">
-              <Card className="bg-slate-800 border-red-500/20">
+              <Card className="bg-slate-800 border-green-500/20">
                 <CardContent className="p-8">
                   <div
-                    className="prose prose-red max-w-none text-slate-300"
+                    className="prose prose-green max-w-none text-slate-300"
                     dangerouslySetInnerHTML={{ __html: product.fullDescription }}
                   />
                 </CardContent>
@@ -252,15 +255,15 @@ Visit Digital Solutions Pro for more premium digital products.`
             </TabsContent>
 
             <TabsContent value="specifications" className="mt-8">
-              <Card className="bg-slate-800 border-red-500/20">
+              <Card className="bg-slate-800 border-green-500/20">
                 <CardContent className="p-8">
                   <div className="grid md:grid-cols-2 gap-6">
                     {Object.entries(product.specifications).map(([key, value]) => (
                       <div
                         key={key}
-                        className="flex justify-between items-center py-3 border-b border-red-500/20 last:border-b-0"
+                        className="flex justify-between items-center py-3 border-b border-green-500/20 last:border-b-0"
                       >
-                        <span className="font-semibold text-white">{key}:</span>
+                        <span className="font-semibold text-green-400">{key}:</span>
                         <span className="text-slate-300">{value}</span>
                       </div>
                     ))}
@@ -270,12 +273,12 @@ Visit Digital Solutions Pro for more premium digital products.`
             </TabsContent>
 
             <TabsContent value="benefits" className="mt-8">
-              <Card className="bg-slate-800 border-red-500/20">
+              <Card className="bg-slate-800 border-green-500/20">
                 <CardContent className="p-8">
                   <div className="space-y-4">
                     {product.benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
                         <span className="text-slate-300">{benefit}</span>
                       </div>
                     ))}
@@ -285,12 +288,12 @@ Visit Digital Solutions Pro for more premium digital products.`
             </TabsContent>
 
             <TabsContent value="faqs" className="mt-8">
-              <Card className="bg-slate-800 border-red-500/20">
+              <Card className="bg-slate-800 border-green-500/20">
                 <CardContent className="p-8">
                   <div className="space-y-6">
                     {product.faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-red-500/20 last:border-b-0 pb-6 last:pb-0">
-                        <h4 className="text-lg font-semibold text-white mb-3">{faq.question}</h4>
+                      <div key={index} className="border-b border-green-500/20 last:border-b-0 pb-6 last:pb-0">
+                        <h4 className="text-lg font-semibold text-green-400 mb-3">{faq.question}</h4>
                         <p className="text-slate-300">{faq.answer}</p>
                       </div>
                     ))}

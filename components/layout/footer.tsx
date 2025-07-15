@@ -1,9 +1,10 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ShoppingBag, MessageCircle, Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { MessageCircle, Mail, Instagram } from "lucide-react"
 
 const footerLinks = {
   company: [
@@ -31,6 +32,10 @@ export default function Footer() {
     const message = "Hello, I would like to know more about Digital Solutions Pro and your products."
     const whatsappUrl = `https://wa.me/919828056386?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
+  }
+
+  const handleInstagramClick = () => {
+    window.open("https://www.instagram.com/digital_tower.pro?igsh=eWVpMnBhZHMxMW1n", "_blank")
   }
 
   return (
@@ -63,9 +68,15 @@ export default function Footer() {
           <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <Link href="/" className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-cyan-600 rounded-lg flex items-center justify-center">
-                  <ShoppingBag className="w-6 h-6 text-white" />
+              <Link href="/" className="flex items-center space-x-3 mb-6">
+                <div className="relative w-12 h-12">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Digital Solutions Pro"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span className="text-2xl font-bold text-white">Digital Solutions Pro</span>
               </Link>
@@ -83,6 +94,15 @@ export default function Footer() {
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-blue-400" />
                   <span className="text-gray-300">ronitrathore6666@gmail.com</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Instagram className="w-5 h-5 text-pink-400" />
+                  <button
+                    onClick={handleInstagramClick}
+                    className="text-gray-300 hover:text-pink-400 transition-colors duration-200"
+                  >
+                    @digital_tower.pro
+                  </button>
                 </div>
               </div>
 
@@ -104,6 +124,15 @@ export default function Footer() {
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   Email
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={handleInstagramClick}
+                  className="border-pink-600 text-pink-400 hover:bg-pink-600 hover:text-white bg-transparent"
+                >
+                  <Instagram className="w-4 h-4 mr-2" />
+                  Follow
                 </Button>
               </div>
             </div>
@@ -170,23 +199,17 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-400 text-sm">© 2024 Digital Solutions Pro. All rights reserved.</div>
 
-            {/* Social Links */}
+            {/* Instagram Link */}
             <div className="flex items-center gap-4">
-              <span className="text-gray-400 text-sm">Follow us:</span>
-              <div className="flex gap-3">
-                <Button size="sm" variant="ghost" className="w-8 h-8 p-0 text-gray-400 hover:text-white">
-                  <Facebook className="w-4 h-4" />
-                </Button>
-                <Button size="sm" variant="ghost" className="w-8 h-8 p-0 text-gray-400 hover:text-white">
-                  <Twitter className="w-4 h-4" />
-                </Button>
-                <Button size="sm" variant="ghost" className="w-8 h-8 p-0 text-gray-400 hover:text-white">
-                  <Instagram className="w-4 h-4" />
-                </Button>
-                <Button size="sm" variant="ghost" className="w-8 h-8 p-0 text-gray-400 hover:text-white">
-                  <Linkedin className="w-4 h-4" />
-                </Button>
-              </div>
+              <span className="text-gray-400 text-sm">Follow us on Instagram:</span>
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={handleInstagramClick}
+                className="w-10 h-10 p-0 text-pink-400 hover:text-pink-300 hover:bg-pink-500/10 transition-all duration-300"
+              >
+                <Instagram className="w-5 h-5" />
+              </Button>
             </div>
           </div>
         </div>
