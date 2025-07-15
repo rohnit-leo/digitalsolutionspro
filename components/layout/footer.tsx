@@ -35,7 +35,7 @@ export default function Footer() {
   }
 
   const handleInstagramClick = () => {
-    window.open("https://www.instagram.com/digital_tower.pro?igsh=eWVpMnBhZHMxMW1n", "_blank")
+    window.open("https://www.instagram.com/digital_solutions.pro?igsh=eWVpMnBhZHMxMW1n", "_blank")
   }
 
   return (
@@ -101,7 +101,7 @@ export default function Footer() {
                     onClick={handleInstagramClick}
                     className="text-gray-300 hover:text-pink-400 transition-colors duration-200"
                   >
-                    @digital_tower.pro
+                    @digital_solutions.pro
                   </button>
                 </div>
               </div>
